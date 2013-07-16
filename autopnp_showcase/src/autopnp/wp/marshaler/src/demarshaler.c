@@ -24,9 +24,9 @@
 /******************************************************************************/
 /***   Includes                                                             ***/
 /******************************************************************************/
-#include "/wp/marshaler/include/demarshaler.h"
-#include "/topic/dictionary.h"
-#include "/topic/dictionaryData.h"
+#include "autopnp/wp/marshaler/include/demarshaler.h"
+#include "autopnp/topic/dictionary.h"
+#include "autopnp/topic/dictionaryData.h"
 
 #include "xme/hal/include/mem.h"
 #include "xme/hal/include/net.h"
@@ -76,7 +76,7 @@ static XME_HAL_TABLE
 static const xme_core_topic_t
 supportedTopics[] =
 {
-	XME_CORE_TOPIC(_TOPIC_IMAGE),
+	XME_CORE_TOPIC(AUTOPNP_TOPIC_IMAGE),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL2),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL3)
@@ -117,7 +117,7 @@ xme_status_t
 doDemarshalingForImage
 (
 	xme_core_dataManager_dataPacketId_t inputPort,
-	_topic_image_t* topicData
+	autopnp_topic_image_t* topicData
 );
 /**
  * \brief  Performs demarshaling for topic 'pnpManager_runtime_graph_model'.
@@ -169,7 +169,7 @@ doDemarshalingForPnpManager_runtime_graph_model3
 /***   Implementation                                                       ***/
 /******************************************************************************/
 xme_status_t
-_wp_demarshaler_init(void)
+autopnp_wp_demarshaler_init(void)
 {
 	XME_HAL_TABLE_INIT(configurationTable);
 
@@ -177,7 +177,7 @@ _wp_demarshaler_init(void)
 }
 
 xme_status_t
-_wp_demarshaler_run
+autopnp_wp_demarshaler_run
 (
 	xme_wp_waypoint_instanceId_t instanceId
 )
@@ -215,7 +215,7 @@ _wp_demarshaler_run
 }
 
 xme_status_t
-_wp_demarshaler_addConfig
+autopnp_wp_demarshaler_addConfig
 (
 	xme_wp_waypoint_instanceId_t* instanceId,
 	xme_core_topic_t topic,
@@ -228,7 +228,7 @@ _wp_demarshaler_addConfig
 
 	XME_CHECK
 	(
-		_wp_demarshaler_isSupported(topic),
+		autopnp_wp_demarshaler_isSupported(topic),
 		XME_STATUS_INVALID_PARAMETER
 	);
 
@@ -259,7 +259,7 @@ _wp_demarshaler_addConfig
 }
 
 xme_status_t
-_wp_demarshaler_fini(void)
+autopnp_wp_demarshaler_fini(void)
 {
 	XME_HAL_TABLE_FINI(configurationTable);
 
@@ -281,12 +281,12 @@ doDemarshaling
 	// Switch for the correct topic
 	// In the respective cases we allocate a buffer with the right size for the topic and
 	// call a function that performs the read from the inputPort and the actual demarshaling
-	if (XME_CORE_TOPIC(_TOPIC_IMAGE) == topic)
+	if (XME_CORE_TOPIC(AUTOPNP_TOPIC_IMAGE) == topic)
 	{
-		_topic_image_t topicData;
+		autopnp_topic_image_t topicData;
 		
 		buffer = &topicData;
-		bufferSize = sizeof(_topic_image_t);
+		bufferSize = sizeof(autopnp_topic_image_t);
 		
 		status = doDemarshalingForImage
 		(
@@ -338,7 +338,7 @@ doDemarshaling
 		XME_LOG
 		(
 			XME_LOG_ERROR, 
-			"_wp_demarshaler_run(): Given topic with id %" PRIu64 " is not "
+			"autopnp_wp_demarshaler_run(): Given topic with id %" PRIu64 " is not "
 			"supported by this demarshaler.",
 			topic
 		);
@@ -375,7 +375,7 @@ xme_status_t
 doDemarshalingForImage
 (
 	xme_core_dataManager_dataPacketId_t inputPort,
-	_topic_image_t* topicData
+	autopnp_topic_image_t* topicData
 )
 {
 	const uint32_t marshaledDataSize = 307233;
@@ -897,7 +897,7 @@ doDemarshalingForPnpManager_runtime_graph_model3
 }
 
 bool
-_wp_demarshaler_isSupported
+autopnp_wp_demarshaler_isSupported
 (
 	xme_core_topic_t topic
 )

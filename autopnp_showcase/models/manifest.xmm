@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest:Manifest xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:manifest="http://chromosome.fortiss.org/metamodel/manifest/1.0" xmi:id="_FakFgO4CEeKG9IF3ihHWww" name="manifest">
+<manifest:Manifest xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:manifest="http://chromosome.fortiss.org/metamodel/manifest/1.0" xmlns:port="http://chromosome.fortiss.org/metamodel/port/1.0" xmi:id="_FakFgO4CEeKG9IF3ihHWww" sourceDirectory="../src" name="autopnp">
   <components xmi:id="_La6eYO4CEeKG9IF3ihHWww" name="pnpManager" description="PnPManager">
     <containedFunctions xmi:id="_La6eZO4CEeKG9IF3ihHWww" name="pnpManager" wcetInNs="200000000">
       <functionBehavior xsi:type="manifest:SimpleBehavior" xmi:id="_La6eZe4CEeKG9IF3ihHWww"/>
@@ -8,6 +8,14 @@
   <components xmi:id="_SLs1sO4CEeKG9IF3ihHWww" name="loginServer">
     <containedFunctions xmi:id="_SLs1se4CEeKG9IF3ihHWww" name="checkLoginRequests" wcetInNs="500000000">
       <functionBehavior xsi:type="manifest:SimpleBehavior" xmi:id="_SLs1su4CEeKG9IF3ihHWww"/>
+    </containedFunctions>
+  </components>
+  <components xmi:id="_JG4ocO4REeKG9IF3ihHWww" name="cleaningGui">
+    <incomingPorts xsi:type="port:Subscription" xmi:id="_jUlEYO4REeKG9IF3ihHWww" name="imageIn">
+      <topic href="dictionary.xmd#_svZzUO4BEeKG9IF3ihHWww"/>
+    </incomingPorts>
+    <containedFunctions xmi:id="_JG5PgO4REeKG9IF3ihHWww" name="displayImage" requiredPorts="_jUlEYO4REeKG9IF3ihHWww" wcetInNs="500000000">
+      <functionBehavior xsi:type="manifest:SimpleBehavior" xmi:id="_JG5Pge4REeKG9IF3ihHWww"/>
     </containedFunctions>
   </components>
 </manifest:Manifest>

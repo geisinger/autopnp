@@ -25,8 +25,8 @@
 /***   Includes                                                             ***/
 /******************************************************************************/
 #include "topicUtil.h"
-#include "/topic/dictionary.h"
-#include "/topic/dictionaryData.h"
+#include "autopnp/topic/dictionary.h"
+#include "autopnp/topic/dictionaryData.h"
 
 #include "xme/core/topicData.h"
 
@@ -43,8 +43,8 @@ xme_core_topicUtil_getTopicSize
 	
 	switch ((uint64_t) topic)
 	{
-		case _TOPIC_IMAGE:
-			size = (uint16_t) sizeof(_topic_image_t);
+		case AUTOPNP_TOPIC_IMAGE:
+			size = (uint16_t) sizeof(autopnp_topic_image_t);
 			break;
 		case XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL:
 			size = (uint16_t) sizeof(xme_core_topic_pnpManager_runtime_graph_model_t);

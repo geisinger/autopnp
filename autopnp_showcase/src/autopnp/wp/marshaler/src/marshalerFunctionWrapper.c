@@ -24,9 +24,9 @@
 /******************************************************************************/
 /***   Includes                                                             ***/
 /******************************************************************************/
-#include "/wp/marshaler/include/demarshaler.h"
+#include "autopnp/wp/marshaler/include/marshaler.h"
 
-#include "/wp/marshaler/include/demarshalerFunctionWrapper.h"
+#include "autopnp/wp/marshaler/include/marshalerFunctionWrapper.h"
 
 #include "xme/core/executionManager/include/executionManagerWrapperInterface.h"
 #include "xme/core/executionManager/include/executionManagerDataStructures.h"
@@ -35,7 +35,7 @@
 /***   Implementation                                                       ***/
 /******************************************************************************/
 void
-_wp_marshaler_demarshalerFunctionWrapper_execute
+autopnp_wp_marshaler_marshalerFunctionWrapper_execute
 (
 	void* param
 )
@@ -64,13 +64,13 @@ _wp_marshaler_demarshalerFunctionWrapper_execute
         {
             xme_core_exec_dispatcher_executionCompleted(
                 funDesc->componentId,
-                funDesc->functionId );
+                funDesc->functionId);
             return;
         }
 
         if(XME_CORE_EXEC_FUNCTION_STATE_PAUSED != funDesc->state)
         {
-        	_wp_demarshaler_run((uint32_t)(uintptr_t)functionVariantId);
+        	autopnp_wp_marshaler_run((uint32_t)(uintptr_t)functionVariantId);
         }
 
         xme_core_exec_dispatcher_executionCompleted

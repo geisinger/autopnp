@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<deployment:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:deployment="http://chromosome.fortiss.org/metamodel/deployment/1.0" xmi:id="_fHnSgO4CEeKG9IF3ihHWww">
+<deployment:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:deployment="http://chromosome.fortiss.org/metamodel/deployment/1.0" xmi:id="_fHnSgO4CEeKG9IF3ihHWww" projectName="autopnp">
   <network xmi:id="_f9l4QO4CEeKG9IF3ihHWww" name="sub0"/>
-  <devices xmi:id="_mp4xIO4CEeKG9IF3ihHWww" name="masterDevice" nodes="_jEDS4O4CEeKG9IF3ihHWww _0O7DcO4CEeKG9IF3ihHWww">
+  <devices xmi:id="_mp4xIO4CEeKG9IF3ihHWww" name="masterDevice" nodes="_jEDS4O4CEeKG9IF3ihHWww _5miBUO4CEeKG9IF3ihHWww">
     <type href="deviceLibrary.xmh#_F64e8MRuEeKXVovrYlzQ3g"/>
     <interfaces xmi:id="_mp4xIe4CEeKG9IF3ihHWww" address="127.0.0.1:32221">
       <relatedInterface href="deviceLibrary.xmh#_KB3icMRuEeKXVovrYlzQ3g"/>
@@ -11,10 +11,7 @@
     <components href="manifest.xmm#_La6eYO4CEeKG9IF3ihHWww"/>
     <components href="manifest.xmm#_SLs1sO4CEeKG9IF3ihHWww"/>
   </nodes>
-  <nodes xmi:id="_0O7DcO4CEeKG9IF3ihHWww" name="capabilityGuiNode" device="_mp4xIO4CEeKG9IF3ihHWww"/>
-  <nodes xmi:id="_5miBUO4CEeKG9IF3ihHWww" name="cleaningGuiNode"/>
-  <nodes xmi:id="_Cr5DUO4DEeKG9IF3ihHWww" name="cleaningRosGatewayNode"/>
-  <nodes xmi:id="_E5m4EO4DEeKG9IF3ihHWww" name="homeAutomationGuiNode"/>
-  <nodes xmi:id="_HWGvsO4DEeKG9IF3ihHWww" name="homeAutomationRosGatewayNode"/>
-  <nodes xmi:id="_Hl77cO4DEeKG9IF3ihHWww" name="homeAutomationClBusWrapperNode"/>
+  <nodes xmi:id="_5miBUO4CEeKG9IF3ihHWww" name="cleaningGuiNode" device="_mp4xIO4CEeKG9IF3ihHWww">
+    <components href="manifest.xmm#_JG4ocO4REeKG9IF3ihHWww"/>
+  </nodes>
 </deployment:Deployment>

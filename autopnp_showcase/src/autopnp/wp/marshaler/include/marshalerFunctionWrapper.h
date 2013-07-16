@@ -21,16 +21,16 @@
  *         (fortiss GmbH).
  */
 
-#ifndef _WP_MARSHALER_DEMARSHALERRUNFUNCTIONWRAPPER_H
-#define _WP_MARSHALER_DEMARSHALERRUNFUNCTIONWRAPPER_H
+#ifndef AUTOPNP_WP_MARSHALER_MARSHALERRUNFUNCTIONWRAPPER_H
+#define AUTOPNP_WP_MARSHALER_MARSHALERRUNFUNCTIONWRAPPER_H
 
 /******************************************************************************/
 /***   Implementation                                                       ***/
 /******************************************************************************/
 void
-_wp_marshaler_demarshalerFunctionWrapper_execute
+autopnp_wp_marshaler_marshalerFunctionWrapper_execute
 (
 	void* param
 );
 
-#endif // #ifndef _WP_MARSHALER_DEMARSHALERRUNFUNCTIONWRAPPER_H
+#endif // #ifndef AUTOPNP_WP_MARSHALER_MARSHALERRUNFUNCTIONWRAPPER_H

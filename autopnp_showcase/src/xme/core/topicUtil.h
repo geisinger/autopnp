@@ -21,8 +21,8 @@
  *         (fortiss GmbH).
  */
 
-#ifndef _TOPIC_TOPICUTIL_H
-#define _TOPIC_TOPICUTIL_H
+#ifndef AUTOPNP_TOPIC_TOPICUTIL_H
+#define AUTOPNP_TOPIC_TOPICUTIL_H
 
 /******************************************************************************/
 /***   Includes                                                             ***/
@@ -54,4 +54,4 @@ xme_core_topicUtil_getTopicSize
 
 XME_EXTERN_C_END
 
-#endif // #ifndef _TOPIC_TOPICUTIL_H
+#endif // #ifndef AUTOPNP_TOPIC_TOPICUTIL_H

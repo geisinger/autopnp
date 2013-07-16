@@ -24,9 +24,9 @@
 /******************************************************************************/
 /***   Includes                                                             ***/
 /******************************************************************************/
-#include "/wp/marshaler/include/marshaler.h"
-#include "/topic/dictionary.h"
-#include "/topic/dictionaryData.h"
+#include "autopnp/wp/marshaler/include/marshaler.h"
+#include "autopnp/topic/dictionary.h"
+#include "autopnp/topic/dictionaryData.h"
 
 #include "xme/hal/include/mem.h"
 #include "xme/hal/include/net.h"
@@ -74,7 +74,7 @@ static XME_HAL_TABLE
 static const xme_core_topic_t
 supportedTopics[] =
 {
-	XME_CORE_TOPIC(_TOPIC_IMAGE),
+	XME_CORE_TOPIC(AUTOPNP_TOPIC_IMAGE),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL2),
 	XME_CORE_TOPIC(XME_CORE_TOPIC_PNPMANAGER_RUNTIME_GRAPH_MODEL3)
@@ -167,7 +167,7 @@ doMarshalingForPnpManager_runtime_graph_model3
 /***   Implementation                                                       ***/
 /******************************************************************************/
 xme_status_t
-_wp_marshaler_init(void)
+autopnp_wp_marshaler_init(void)
 {
 	XME_HAL_TABLE_INIT(configurationTable);
 
@@ -175,7 +175,7 @@ _wp_marshaler_init(void)
 }
 
 xme_status_t
-_wp_marshaler_run
+autopnp_wp_marshaler_run
 (
 	xme_wp_waypoint_instanceId_t instanceId
 )
@@ -213,7 +213,7 @@ _wp_marshaler_run
 }
 
 xme_status_t
-_wp_marshaler_addConfig
+autopnp_wp_marshaler_addConfig
 (
 	xme_wp_waypoint_instanceId_t* instanceId,
 	xme_core_topic_t topic,
@@ -226,7 +226,7 @@ _wp_marshaler_addConfig
 
 	XME_CHECK
 	(
-		_wp_marshaler_isSupported(topic),
+		autopnp_wp_marshaler_isSupported(topic),
 		XME_STATUS_INVALID_PARAMETER
 	);
 
@@ -257,7 +257,7 @@ _wp_marshaler_addConfig
 }
 
 xme_status_t
-_wp_marshaler_fini(void)
+autopnp_wp_marshaler_fini(void)
 {
 	XME_HAL_TABLE_FINI(configurationTable);
 
@@ -279,7 +279,7 @@ doMarshaling
 	// Switch for the correct topic
 	// In the respective cases we allocate a buffer with the right size for the topic and
 	// call a function that performs the read from the inputPort and the actual marshaling
-	if (XME_CORE_TOPIC(_TOPIC_IMAGE) == topic)
+	if (XME_CORE_TOPIC(AUTOPNP_TOPIC_IMAGE) == topic)
 	{
 		uint8_t marshaledData[307233];
 		
@@ -376,13 +376,13 @@ doMarshalingForImage
 	void* buffer
 )
 {
-	_topic_image_t topicData;
+	autopnp_topic_image_t topicData;
 	unsigned int topicDataSize;
 	unsigned int bytesRead;
 	uint8_t* bufferPtr;
 	xme_status_t status;
 
-	topicDataSize = sizeof(_topic_image_t);
+	topicDataSize = sizeof(autopnp_topic_image_t);
 
 	// Read topic data
 	status = xme_core_dataHandler_readData
@@ -864,7 +864,7 @@ doMarshalingForPnpManager_runtime_graph_model3
 }
 
 bool
-_wp_marshaler_isSupported
+autopnp_wp_marshaler_isSupported
 (
 	xme_core_topic_t topic
 )
