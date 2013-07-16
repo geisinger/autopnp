@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic:TopicDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataType="http://chromosome.fortiss.org/metamodel/dataType/1.0" xmlns:topic="http://chromosome.fortiss.org/metamodel/topic/1.0" xmi:id="_lLZ2Ye4BEeKG9IF3ihHWww" name="dictionary" identifierPrefix="_topic" idRangeEnd="5000" attributeIdRangeEnd="5000">
+  <topics xmi:id="_svZzUO4BEeKG9IF3ihHWww" name="image" id="4099">
+    <dataTypeDefinition xmi:id="_svZzUe4BEeKG9IF3ihHWww">
+      <dataType xsi:type="dataType:StructuredDataType" xmi:id="_svZzUu4BEeKG9IF3ihHWww">
+        <members xmi:id="_svZzU-4BEeKG9IF3ihHWww" identifier="height">
+          <dataTypeDefRef href="basicXmeModel:basic_dataTypeLibrary#uint32_t"/>
+        </members>
+        <members xmi:id="_svZzVO4BEeKG9IF3ihHWww" identifier="width">
+          <dataTypeDefRef href="basicXmeModel:basic_dataTypeLibrary#uint32_t"/>
+        </members>
+        <members xmi:id="_svZzVe4BEeKG9IF3ihHWww" identifier="encoding">
+          <dataType xsi:type="dataType:Array" xmi:id="_svZzVu4BEeKG9IF3ihHWww" count="20">
+            <dataType xsi:type="dataType:Char" xmi:id="_svZzV-4BEeKG9IF3ihHWww"/>
+          </dataType>
+        </members>
+        <members xmi:id="_svZzWO4BEeKG9IF3ihHWww" identifier="isBigEndian">
+          <dataTypeDefRef href="basicXmeModel:basic_dataTypeLibrary#uint8_t"/>
+        </members>
+        <members xmi:id="_svZzWe4BEeKG9IF3ihHWww" identifier="step">
+          <dataTypeDefRef href="basicXmeModel:basic_dataTypeLibrary#uint32_t"/>
+        </members>
+        <members xmi:id="_svZzWu4BEeKG9IF3ihHWww" identifier="data">
+          <dataType xsi:type="dataType:Array" xmi:id="_svZzW-4BEeKG9IF3ihHWww" count="307200">
+            <dataTypeDefRef href="basicXmeModel:basic_dataTypeLibrary#uint8_t"/>
+          </dataType>
+        </members>
+      </dataType>
+    </dataTypeDefinition>
+  </topics>
+</topic:TopicDictionary>
